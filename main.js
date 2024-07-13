@@ -19,7 +19,7 @@ function CreateTab(url) {
             // Hook into openExternal function
             let openExternal = Electron_Shell.openExternal;
             Electron_Shell.openExternal = function() {
-                if (arguments[0].includes("docs2.yoyogames.com") == true || arguments[0].includes("manual.gamemaker.io")) {
+                if (arguments[0].includes("docs2.yoyogames.com") == true || arguments[0].includes("manual.gamemaker.io") == true) {
                     CreateTab(arguments[0]);
                 } else {
                     return openExternal.apply(this, arguments);
